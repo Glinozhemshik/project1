@@ -1,0 +1,11 @@
+{% extends 'admin/admin.html' %}
+{% block content %}
+
+<form action="." method="GET">
+    content: <input type="text" name="content_value"><br>
+    title: <input type="text" name="title_value"><br>
+    slug: <input type="text" name="slug_value"><br>
+    <input type="submit" value="Добавить">
+</form>
+
+{% endblock %}

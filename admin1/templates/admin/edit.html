@@ -1,0 +1,10 @@
+{% extends 'admin/admin.html' %}
+
+{% block content %}
+    <form action="." method="GET">
+        <input class="form-control" placeholder="content" type="text" name="content_value" value={{ content }}><br>
+        <input class="form-control" placeholder="title" type="text" name="title_value" value={{ title }}><br>
+        <input class="form-control" placeholder="slug" type="text" name="slug_value" value={{ slug }}><br>
+        <input class="btn btn-success" type="submit" value="Сохранить">
+    </form>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'admin/admin.html' %}
+{% block content %}
+    <form action="http://127.0.0.1:8000/admin/articles/add/" method="post">
+            {% csrf_token %}
+
+    <input type="submit" class="btn btn-danger" value="Добавить статью" name="mybtn">
+    </form>
+{% if content_value %}
+        <ul class="list-group">
+            {% for e in content_value %}
+                <li class="list-group-item">
+                    {{ e.content  }}
+                    {{ e.title }}
+                    {{ e.slug }}
+                     <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <a class="align-right btn btn-danger" href="http://127.0.0.1:8000/admin/articles_del/{{ e.content }}"> Удалить </a>
+                                <a class="align-right btn btn-info" href="http://127.0.0.1:8000/admin/articles/edit/{{ e.slug }}"> Редактировать </a>
+                                <a class="align-right btn btn-success" href="http://127.0.0.1:8000/articles/{{ e.slug }}"> Просмотреть </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+
+
+{% endblock %}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static "/bootstrap3/css/bootstrap.min.css" %}">
+</head>
+<body>
+    {% if content_value %}
+        <ul class="list-group">
+            {% for e in content_value %}
+                <li class="list-group-item">
+<!--{#                    {{ e.context  }}#}-->
+<!--{#                   {{ e.title }}#}-->
+<!--{#                    {{ e.slug }}#}-->
+<!--{#                   <a class="align-right" href="element/{{ e.slug }}"> Watch </a>#}-->
+                <a class="align-right" href="articles/{{ e.slug }}"> {{ e.title }} </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
